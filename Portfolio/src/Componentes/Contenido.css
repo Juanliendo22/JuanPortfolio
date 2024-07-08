@@ -55,7 +55,7 @@
   gap: 30px;
   flex-wrap: wrap;
 }
-
+/* src/Contenido.css */
 .insignias img {
   width: 50px;
   transition: transform 0.3s ease; /* Transición suave para la rotación */
@@ -63,5 +63,5 @@
 }
 
 .insignias img:hover {
-  transform: rotate(-10deg); /* Inclina la imagen 5 grados hacia la izquierda */
+  transform: scale(1.2) rotate(-10deg); /* Agranda la imagen y la inclina */
 }
