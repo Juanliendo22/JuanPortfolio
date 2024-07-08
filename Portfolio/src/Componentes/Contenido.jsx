@@ -15,7 +15,7 @@ import Tooltip from "./Tooltip"; // Asegúrate de importar el componente Tooltip
 
 const Contenido = () => {
   return (
-    <div className="Content">
+    <div id="about-me" className="Content">
       <p>
         <strong>About Me</strong>
         <br /> I am a budding web developer passionate about <br />

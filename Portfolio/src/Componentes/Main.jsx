@@ -25,7 +25,7 @@ const Main = () => {
   }, []);
 
   return (
-    <main className="main-container">
+    <main id="home" className="main-container">
       <div className="containerPrincipal">
         <div className="Text-container">
           <p>{text}</p>

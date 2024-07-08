@@ -5,7 +5,7 @@ import "./Projects.css"; // Importa los estilos para el footer
 
 const Projects = () => {
   return (
-    <div className="ProjectsMain">
+    <div id="projects" className="ProjectsMain">
       <h3>My projects</h3>
       <div className="ContenedorCajas">
         <div className="Caja"></div>
