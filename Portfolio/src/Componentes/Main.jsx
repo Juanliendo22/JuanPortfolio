@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./Main.css";
-import Yo from "../assets/yo.jpg";
+import Yo from "../assets/yo.png";
 
 const Main = () => {
   const [text, setText] = useState(""); // Estado para el texto de la máquina de escribir
