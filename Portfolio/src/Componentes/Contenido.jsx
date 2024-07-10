@@ -1,5 +1,3 @@
-// src/components/Contenido.jsx
-
 import React from "react";
 import "./Contenido.css";
 import Github from "../assets/Github.png";
@@ -11,7 +9,18 @@ import Html5 from "../assets/Html5.png";
 import Js from "../assets/Js.png";
 import vs from "../assets/vs.png";
 import Bootstrap from "../assets/Bootstrap.png";
-import Tooltip from "./Tooltip"; // Asegúrate de importar el componente Tooltip
+
+const skillsData = [
+  { name: "Github", level: "70%", img: Github },
+  { name: "Branch", level: "50%", img: Branch },
+  { name: "VS Code", level: "90%", img: vs },
+  { name: "HTML5", level: "90%", img: Html5 },
+  { name: "CSS", level: "80%", img: Css },
+  { name: "JavaScript", level: "60%", img: Js },
+  { name: "Figma", level: "60%", img: Figma },
+  { name: "Atom", level: "60%", img: Atom },
+  { name: "Bootstrap", level: "90%", img: Bootstrap },
+];
 
 const Contenido = () => {
   return (
@@ -31,33 +40,20 @@ const Contenido = () => {
       <div className="skills">
         <h2>My Skills</h2>
         <div className="insignias">
-          <Tooltip skill="Github" message="Conozco mucho">
-            <img src={Github} alt="Github" />
-          </Tooltip>
-          <Tooltip skill="Branch" message="Conozco poco">
-            <img src={Branch} alt="Branch" />
-          </Tooltip>
-          <Tooltip skill="VS Code" message="Conozco bastante">
-            <img src={vs} alt="vs" />
-          </Tooltip>
-          <Tooltip skill="HTML5" message="Conozco mucho">
-            <img src={Html5} alt="Html5" />
-          </Tooltip>
-          <Tooltip skill="CSS" message="Conozco mucho">
-            <img src={Css} alt="Css" />
-          </Tooltip>
-          <Tooltip skill="JavaScript" message="Conozco bastante">
-            <img src={Js} alt="Js" />
-          </Tooltip>
-          <Tooltip skill="Figma" message="Conozco poco">
-            <img src={Figma} alt="Figma" />
-          </Tooltip>
-          <Tooltip skill="Atom" message="Conozco poco">
-            <img src={Atom} alt="Atom" />
-          </Tooltip>
-          <Tooltip skill="Bootstrap" message="Conozco bastante">
-            <img src={Bootstrap} alt="Bootstrap" />
-          </Tooltip>
+          {skillsData.map((skill) => (
+            <div className="skill-container" key={skill.name}>
+              <img src={skill.img} alt={skill.name} />
+              <div className="skill-bar">
+                <div
+                  className="skill-bar-inner"
+                  style={{ width: skill.level }}
+                ></div>
+              </div>
+              <div className="tooltip">
+                <span className="tooltiptext">{skill.level}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
