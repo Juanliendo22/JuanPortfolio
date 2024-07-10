@@ -5,8 +5,17 @@ import "./Main.css";
 import Yo from "../assets/yo.png";
 
 const Main = () => {
-  const [text, setText] = useState(""); // Estado para el texto de la máquina de escribir
-  const fullText = "Hii,\nI’m Juan Liendo\nFrontEnd Developer.";
+  // Estado para el texto de la máquina de escribir
+  const [text, setText] = useState("");
+  const [language, setLanguage] = useState("en"); // "en" para inglés, "es" para español
+
+  // Texto de la máquina de escribir en diferentes idiomas
+  const texts = {
+    en: "Hii,\nI’m Juan Liendo\nFrontEnd Developer.",
+    es: "Hola,\nSoy Juan Liendo\nDesarrollador FrontEnd.",
+  };
+
+  const fullText = texts[language];
 
   useEffect(() => {
     let index = 0; // Índice de posición del texto
@@ -22,19 +31,34 @@ const Main = () => {
 
     // Limpieza del intervalo en caso de que el componente se desmonte
     return () => clearInterval(intervalId);
-  }, []);
+  }, [language]);
+
+  // Función para cambiar el idioma
+  const toggleLanguage = () => {
+    setLanguage((prevLanguage) => (prevLanguage === "en" ? "es" : "en"));
+  };
 
   return (
     <main id="home" className="main-container">
       <div className="containerPrincipal">
         <div className="Text-container">
-          <p>{text}</p>
+          <p>
+            {text.split("\n").map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
         </div>
         <div className="Image-container">
           <img src={Yo} alt="Yo" />
         </div>
       </div>
-      <button>Download my CV</button> {/* Corrige la ortografía de "CV" */}
+
+      <a href="/path-to-cv" download>
+        <button>Download my CV</button> {/* Cambiar el enlace a tu CV */}
+      </a>
     </main>
   );
 };

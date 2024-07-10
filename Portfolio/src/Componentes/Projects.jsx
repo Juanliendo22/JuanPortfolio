@@ -13,20 +13,20 @@ const Projects = () => {
       img: tuwebi,
       alt: "Tuwebi Project",
       description:
-        "Consiste en la pagina web de un emprendimiento que crea paginas web, del cual soy una de las personas que forman parte del proyecto",
+        "This is a website for a business that creates websites, of which I am one of the team members.",
     },
     {
       id: 2,
       img: okto,
       alt: "Okto Project",
       description:
-        "Fue una pagina para un cliente real de TuWebi, la cual tuve que realizar desde 0",
+        "This was a website for a real client from TuWebi, which I had to build from scratch.",
     },
     {
       id: 3,
       img: Ae,
       alt: "Ae Project",
-      description: "Consiste en una herramienta para AmericanExpress",
+      description: "This is a tool developed for American Express.",
     },
   ];
 

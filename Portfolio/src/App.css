@@ -18,13 +18,13 @@
   position: fixed; /* Fija la imagen en la página */
   top: 50%; /* Posiciona la imagen en el medio verticalmente */
   left: 50%; /* Posiciona la imagen en el medio horizontalmente */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Ajusta para centrar la imagen exactamente */
-  z-index: -1; /* Asegura que la imagen esté encima del resto del contenido */
+  transform: translate(-50%, -50%) scale(3); /* Comienza en una escala 3x más grande */
+  z-index: -1; /* Asegura que la imagen esté detrás del contenido principal */
   width: 150px; /* Ajusta el tamaño de la imagen según tus necesidades */
   height: auto; /* Mantiene la proporción de la imagen */
+  opacity: 0; /* La imagen comienza como invisible */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transición para mostrar la imagen y el zoom */
+  animation: showImage 1s ease-in-out 2.5s forwards; /* Anima la imagen para que aparezca después de 3 segundos */
 }
 
 /* Opcional: Agregar estilos para diferentes resoluciones */
@@ -37,5 +37,17 @@
 @media (min-width: 1200px) {
   .center-image {
     width: 200px; /* Ajusta el tamaño para pantallas más grandes */
+  }
+}
+
+/* Animación para mostrar la imagen */
+@keyframes showImage {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(7); /* Comienza grande y oculto */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Termina en el tamaño normal */
   }
 }
