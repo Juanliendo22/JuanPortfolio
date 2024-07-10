@@ -62,13 +62,16 @@
 .Image-container img {
   width: 300px;
   height: auto;
-  border-bottom: 10px solid #ffffff79; /* Línea en el borde inferior */
-  border-right: 7px solid #ffffff71; /* Línea en el borde derecho */
-  transition: transform 0.3s ease; /* Transición suave para la rotación */
+  border: 5px solid #00000079;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  filter: grayscale(50%);
 }
 
 .Image-container img:hover {
-  transform: rotate(-5deg); /* Inclina la imagen 5 grados hacia la izquierda */
+  transform: rotate(-5deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  filter: grayscale(0%);
 }
 
 button {

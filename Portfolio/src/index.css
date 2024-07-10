@@ -5,8 +5,19 @@
 }
 
 body {
-  background-image: url("./assets/Fondo.png"); /* Ruta relativa desde css a la imagen */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(180deg, #ff7e5f, #feb47b, #86a8e7, #a7ffeb);
+  background-size: 200% 200%;
+  animation: gradientAnimation 20s ease infinite;
+}
+/* AnimatedBackground.css */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
