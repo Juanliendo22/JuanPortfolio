@@ -5,24 +5,10 @@
 }
 
 body {
-  background: linear-gradient(180deg, #ff7e5f, #feb47b, #86a8e7, #a7ffeb);
-  background-size: 200% 200%;
-  animation: gradientAnimation 20s ease infinite;
+  background-image: url("assets/mesh-gradient2.png");
+  background-size: cover;
   background-attachment: fixed; /* Establece el fondo como fijo */
-  background-position: center center; /* Centra el fondo */
-}
-
-/* AnimatedBackground.css */
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
+  background-position: center; /* Centra el fondo */
 }
 
 /* Estiliza la barra de desplazamiento para navegadores WebKit (Chrome, Safari, Edge) */

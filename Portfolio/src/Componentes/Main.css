@@ -60,7 +60,7 @@
 }
 
 .Image-container img {
-  width: 300px;
+  width: 250px;
   height: auto;
   border: 5px solid #00000079;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -81,7 +81,6 @@ button {
   background-color: #d9d9d9;
   border-radius: 20px;
   cursor: pointer;
-
   transition: transform 0.3s ease; /* Transición suave para el efecto de aumento */
 }
 
@@ -91,23 +90,44 @@ button:hover {
 
 /* Media Queries para hacer el diseño responsive */
 
+/* Para pantallas entre 769px y 1024px (tabletas en modo horizontal) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Text-container {
+    justify-content: center;
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding-right: 0; /* Ajusta la posición del cursor en pantallas medianas */
+  }
+
+  .Image-container img {
+    width: 200px; /* Reduce el tamaño de la imagen en pantallas medianas */
+  }
+
+  button {
+    margin-top: 40px; /* Ajusta el espacio superior del botón en pantallas medianas */
+    padding: 8px 35px; /* Ajusta el tamaño del botón */
+  }
+}
+
 /* Para pantallas de 768px o menos (tabletas y dispositivos móviles) */
 @media (max-width: 768px) {
   .Text-container {
     justify-content: center;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 30px;
     padding-right: 0; /* Ajusta la posición del cursor en pantallas pequeñas */
+    text-align: center; /* Centro el texto en pantallas más pequeñas */
   }
 
   .Image-container img {
-    width: 300px; /* Reduce el tamaño de la imagen en pantallas más pequeñas */
+    width: 180px; /* Reduce aún más el tamaño de la imagen en pantallas pequeñas */
   }
 
   button {
-    margin-top: 30px; /* Reduce el espacio superior del botón en pantallas más pequeñas */
-    padding: 8px 30px; /* Ajusta el tamaño del botón */
+    margin-top: 30px; /* Reduce el espacio superior del botón en pantallas pequeñas */
+    padding: 8px 25px; /* Ajusta el tamaño del botón */
   }
 }
 
@@ -119,10 +139,11 @@ button:hover {
     align-items: center;
     font-size: 1.5rem; /* Reduce aún más el tamaño de la fuente */
     margin-bottom: 20px;
+    text-align: start; /* Asegura que el texto esté centrado en móviles */
   }
 
   .Image-container img {
-    width: 200px; /* Reduce aún más el tamaño de la imagen en pantallas muy pequeñas */
+    width: 150px; /* Reduce aún más el tamaño de la imagen en pantallas muy pequeñas */
   }
 
   button {

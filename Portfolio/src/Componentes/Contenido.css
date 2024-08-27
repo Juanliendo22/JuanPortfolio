@@ -50,7 +50,9 @@
 }
 
 .insignias img {
-  width: 50px;
+  width: 3vw; /* Cambiar a vw para hacer el tamaño relativo al viewport */
+  max-width: 50px; /* Máximo tamaño para evitar que crezcan demasiado */
+  min-width: 30px; /* Tamaño mínimo para que no se encojan demasiado */
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -67,8 +69,10 @@
 }
 
 .skill-container img {
-  width: 50px;
-  height: 50px;
+  width: 3vw; /* Cambiar a vw para hacer el tamaño relativo al viewport */
+  max-width: 50px;
+  min-width: 30px;
+  height: auto; /* Mantener proporción */
   margin-right: 10px;
 }
 
@@ -112,4 +116,70 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+/* Media Queries para hacer el diseño responsive */
+
+@media (max-width: 1024px) {
+  .skills {
+    width: 85%;
+    padding: 40px;
+  }
+
+  .skill-container {
+    width: 180px;
+  }
+
+  .Content strong {
+    font-size: 2.5rem;
+  }
+
+  .Content p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .skill-container {
+    width: 160px;
+  }
+
+  .Content strong {
+    font-size: 2rem;
+  }
+
+  .Content p {
+    font-size: 1.2rem;
+  }
+
+  .Content p {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    width: 95%;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .skill-container {
+    width: 140px;
+  }
+
+  .Content strong {
+    font-size: 1.5rem;
+  }
+
+  .Content p {
+    font-size: 1rem;
+    padding-top: 20px;
+  }
 }

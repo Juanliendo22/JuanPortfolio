@@ -56,7 +56,7 @@ const Main = () => {
         </div>
       </div>
 
-      <a href="/path-to-cv" download>
+      <a href="/JuanLiendoCurriculum.pdf" download>
         <button>Download my CV</button> {/* Cambiar el enlace a tu CV */}
       </a>
     </main>

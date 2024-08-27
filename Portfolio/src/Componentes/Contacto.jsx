@@ -1,5 +1,3 @@
-// src/components/Contacto.jsx
-
 import React, { useState } from "react";
 import "./Contacto.css"; // Importa los estilos para el formulario de contacto
 
@@ -17,14 +15,22 @@ const Contacto = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes añadir la lógica para enviar el formulario
-    // Por ejemplo:
-    // fetch('/api/contact', {
-    //   method: 'POST',
-    //   body: JSON.stringify(formData),
-    //   headers: { 'Content-Type': 'application/json' }
-    // });
-    alert("Mensaje enviado!");
+
+    const { name, email, message } = formData;
+    const whatsappMessage = `Hola! Mi nombre es ${name}, mi correo electrónico es ${email}. Quisiera decirte: ${message}`;
+
+    // Codifica el mensaje para que sea seguro para usar en una URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // Reemplaza con tu número de WhatsApp (incluye el código de país, pero sin el signo '+')
+    const phoneNumber = "543512124907"; // Este es tu número en formato internacional (Argentina: +54)
+
+    // Abre WhatsApp con el mensaje precompuesto y el número específico
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
+      "_blank"
+    );
+
     setFormData({ name: "", email: "", message: "" });
   };
 

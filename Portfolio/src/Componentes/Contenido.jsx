@@ -19,7 +19,7 @@ const skillsData = [
   { name: "JavaScript", level: "60%", img: Js },
   { name: "Figma", level: "60%", img: Figma },
   { name: "Atom", level: "60%", img: Atom },
-  { name: "Bootstrap", level: "90%", img: Bootstrap },
+  { name: "Bootstrap", level: "70%", img: Bootstrap },
 ];
 
 const Contenido = () => {
